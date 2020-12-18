@@ -4,18 +4,18 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.concurrent.TimeUnit;
 
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class Demo {
 
 	@Test
 	public void register() {
 		try {
-			WebDriver driver = new ChromeDriver();
 			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\BrowserDriversEXE\\chromedriver.exe"); 	
+			WebDriver driver = new ChromeDriver();
 			driver.get("https://demoqa.com/register");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
@@ -30,8 +30,7 @@ public class Demo {
 			driver.findElement(By.id("userName")).sendKeys(dtf.format(now));
 			driver.findElement(By.id("password")).sendKeys("Pasword1$");
 			
-			Thread.sleep(5000);
-			
+			driver.quit();
 		}
 		catch(Exception e) {
 			System.out.println(e.getMessage());
