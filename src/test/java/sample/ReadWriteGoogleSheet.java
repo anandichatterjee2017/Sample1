@@ -38,11 +38,11 @@ public class ReadWriteGoogleSheet {
 		private final String APPLICATION_NAME = "Google Sheets API Java Quickstart";
 		private final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
 		private final String TOKENS_DIRECTORY_PATH = System.getProperty("user.dir")
-				+ "\\src\\test\\java\\sample";
+				+ "/src/test/java/sample";
 		private final List<String> SCOPES = Collections.singletonList(SheetsScopes.SPREADSHEETS);
 		//private static final List<String> SCOPES = Arrays.asList("https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/drive");
 		private final String CREDENTIALS_FILE_PATH = System.getProperty("user.dir")
-				+ "\\src\\test\\java\\sample\\credentials.json";
+				+ "/src/test/java/sample/credentials.json";
 		final String range = "A1:B";
 		private Sheets service;
 		private final String title = "DemoQA";
