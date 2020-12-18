@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 public class Demo {
 
+	String spreadsheetId = "1ty-PpPVeeyqPsJj9W3t7Wo-z5wqONcUZRq0ZR06xWF8";
 	@Test
 	public void register() {
 		try {
@@ -31,6 +32,11 @@ public class Demo {
 			driver.findElement(By.id("userName")).sendKeys(dtf.format(now));
 			driver.findElement(By.id("password")).sendKeys("Pasword1$");
 
+			ReadWriteGoogleSheet sample = new ReadWriteGoogleSheet();
+			String str = sample.getData(spreadsheetId, "Username");
+			System.out.println(str);
+			sample.updateData(spreadsheetId, str, dtf.format(now));
+			
 			driver.quit();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
