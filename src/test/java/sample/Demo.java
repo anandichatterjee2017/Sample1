@@ -17,6 +17,7 @@ public class Demo {
 		try {
 			
 			String url = System.getProperty("AppUrlValue");
+			System.out.println(System.getProperty("Credentials"));
 			
 			ReadWriteGoogleSheet sample = new ReadWriteGoogleSheet();
 			String str = sample.getData(spreadsheetId, "Username");
