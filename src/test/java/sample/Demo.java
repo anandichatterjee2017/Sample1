@@ -15,6 +15,9 @@ public class Demo {
 	@Test
 	public void register() {
 		try {
+			
+			String url = System.getProperty("AppUrlValue");
+			
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\BrowserDriversEXE\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
