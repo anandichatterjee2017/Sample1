@@ -37,6 +37,7 @@ public class Demo {
 			System.out.println(dtf.format(now));
 
 			driver.findElement(By.id("userName")).sendKeys(dtf.format(now));
+			Thread.sleep(5000);
 			driver.findElement(By.id("password")).sendKeys("Pasword1$");
 
 			
