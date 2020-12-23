@@ -16,6 +16,8 @@ public class Demo {
 	public void register() {
 		try {
 			
+			String url = System.getProperty("AppUrlValue");
+			
 			ReadWriteGoogleSheet sample = new ReadWriteGoogleSheet();
 			String str = sample.getData(spreadsheetId, "Username");
 			System.out.println(str);
@@ -23,7 +25,7 @@ public class Demo {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "/BrowserDriversEXE/chromedriver");
 			WebDriver driver = new ChromeDriver();
-			driver.get("https://demoqa.com/register");
+			driver.get(url);
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 
